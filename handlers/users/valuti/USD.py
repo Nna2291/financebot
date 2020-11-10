@@ -1,7 +1,7 @@
 from aiogram import types
 from loader import dp
 import datetime
-from pycbrf.toolbox import ExchangeRates
+
 from keyboards.default.KursKeyboard import perexodiusd
 import yfinance as yf
 
@@ -10,9 +10,6 @@ x = str(now.year)
 y = str(now.month)
 z = str(now.day - 1)
 m = x + '-' + y + '-' + z
-
-
-rates = ExchangeRates(m)
 
 
 @dp.message_handler(text='Посмотреть сколько стоил доллар месяц назад')

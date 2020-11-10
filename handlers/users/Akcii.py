@@ -13,7 +13,7 @@ x = str(now.year)
 y = str(now.month)
 z = str(now.day)
 m = x + '-' + y + '-' + z
-nowtime = str(now.hour) + ':' + str(now.minute) + ':' + str(now.second)
+
 
 
 @dp.message_handler(text='Узнать котировки акций', state=None)
