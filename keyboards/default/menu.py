@@ -8,9 +8,6 @@ menuswe = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='Узнать курс валют')
         ],
-        [
-            KeyboardButton(text='Войти в свой дневник расходов')
-        ],
     ],
     resize_keyboard=True
 )

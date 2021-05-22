@@ -21,9 +21,6 @@ kursvalue = ReplyKeyboardMarkup(
 perexodieuro = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Посмотреть сколько стоил евро месяц назад')
-        ],
-        [
             KeyboardButton(text='Посмотреть сколько стоило евро год назад')
         ],
         [
@@ -36,9 +33,6 @@ perexodieuro = ReplyKeyboardMarkup(
 perexodiusd = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Посмотреть сколько стоил доллар месяц назад')
-        ],
-        [
             KeyboardButton(text='Посмотреть сколько стоил доллар год назад')
         ],
         [
@@ -50,9 +44,6 @@ perexodiusd = ReplyKeyboardMarkup(
 
 perexodigbps = ReplyKeyboardMarkup(
     [
-        [
-            KeyboardButton(text='Посмотреть сколько стоил фунт месяц назад')
-        ],
         [
             KeyboardButton(text='Посмотреть сколько стоил фунт год назад')
         ],

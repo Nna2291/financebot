@@ -9,11 +9,11 @@ import yfinance as yf
 from aiogram.dispatcher import FSMContext
 
 now = datetime.datetime.now()
-x = str(now.year)
-y = str(now.month)
-z = str(now.day)
-m = x + '-' + y + '-' + z
 
+if len(str(now.month)) == 1:
+    nowm = '0' + str(now.month)
+if len(str(now.day)) == 1:
+    nowd = '0' + str(now.day)
 
 
 @dp.message_handler(text='Узнать котировки акций', state=None)
@@ -36,10 +36,13 @@ async def answer_q2(message: types.Message, state: FSMContext):
     await state.update_data(answer1=answer)
     data = await state.get_data()
     answer1 = data.get("answer1")
-    await message.answer('Подождите... Идет получение информации от <a href="https://finance.yahoo.com/">'
-                         + "Yahoo Finance" + '</a>')
-    await message.answer('Сейчас акции ' + answer1 + ' можно купить за ' +
-                         str(round(yf.download(answer1, str(now.year) + '-' + str(now.month) +
-                                               '-' + str(now.day))['Adj Close'][0])) + ' $',
-                         reply_markup=AkciyaKey)
+    print(answer1)
+    await message.answer(
+        'Подождите... Идет получение информации от <a href="https://finance.yahoo.com/">'
+        + "Yahoo Finance" + '</a>')
+    await message.answer(
+        f'Сегодня вы можете купить акцию компании {answer1.upper()} за ' + str(round(
+            yf.download(answer1.upper(), f'{now.year}-{now.month}-{now.day - 1}')['Adj Close'][
+                0])) + '$',
+        reply_markup=AkciyaKey)
     await state.finish()
