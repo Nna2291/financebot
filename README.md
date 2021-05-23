@@ -1,2 +1,2 @@
 # financebot
-Небольшой финансовый помощник в вашем кармане)
+Simple Finiace helper in your pocket)
