@@ -12,7 +12,7 @@ kursvalue = ReplyKeyboardMarkup(
             KeyboardButton(text='💷')
         ],
         [
-            KeyboardButton(text='Вернуться в меню')
+            KeyboardButton(text='Back to menu')
         ],
     ],
     resize_keyboard=True
@@ -21,10 +21,10 @@ kursvalue = ReplyKeyboardMarkup(
 perexodieuro = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Посмотреть сколько стоило евро год назад')
+            KeyboardButton(text='See how much the euro cost a year ago')
         ],
         [
-            KeyboardButton(text='Вернуться к выбору валюты')
+            KeyboardButton(text='Back to currency selection')
         ],
     ],
     resize_keyboard=True
@@ -33,10 +33,10 @@ perexodieuro = ReplyKeyboardMarkup(
 perexodiusd = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Посмотреть сколько стоил доллар год назад')
+            KeyboardButton(text='See how much a dollar cost a year ago')
         ],
         [
-            KeyboardButton(text='Вернуться к выбору валюты')
+            KeyboardButton(text='Back to currency selection')
         ],
     ],
     resize_keyboard=True
@@ -45,10 +45,10 @@ perexodiusd = ReplyKeyboardMarkup(
 perexodigbps = ReplyKeyboardMarkup(
     [
         [
-            KeyboardButton(text='Посмотреть сколько стоил фунт год назад')
+            KeyboardButton(text='See how much a pound cost a year ago')
         ],
         [
-            KeyboardButton(text='Вернуться к выбору валюты')
+            KeyboardButton(text='Back to currency selection')
         ],
     ],
     resize_keyboard=True

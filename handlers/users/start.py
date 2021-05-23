@@ -8,27 +8,27 @@ from loader import dp
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
     await message.answer(
-        'Добро пожаловать в FinanceBot!\n\nДля начала работы определите свой запрос.',
+        'Welcome to FinanceBot!\nTo get started, define your request.',
         reply_markup=menuswe)
 
 
-@dp.message_handler(text='Вернуться в меню')
+@dp.message_handler(text='Back to menu')
 async def bot_start(message: types.Message):
     await message.answer(
-        'Добро пожаловать в FinanceBot!\n\nДля начала работы определите свой запрос.',
+        'Welcome to FinanceBot!\nTo get started, define your request.',
         reply_markup=menuswe)
 
 
-@dp.message_handler(text='Узнать курс валют' or 'Вернуться к выбору валюты')
+@dp.message_handler(text='Learn share prices' or 'Back to currency selection')
 async def kurs(message: types.Message):
-    await message.answer('Выберите интересующую вас валюту.\n\nВсе данные предоставлены'
+    await message.answer('Select the currency you are interested in.\n\nAll data provided'
                          ' <a href="https://finance.yahoo.com/">' + "Yahoo Finance" + '</a>',
                          reply_markup=kursvalue)
 
 
-@dp.message_handler(text='Вернуться к выбору валюты')
+'''@dp.message_handler(text='Вернуться к выбору валюты')
 async def kurs(message: types.Message):
-    await message.answer('Выберите интересующую вас валюту.\n\nВсе данные предоставлены'
+    await message.answer('Select the currency you are interested in.\n\nAll data provided'
                          ' <a href="https://finance.yahoo.com/">' + "Yahoo Finance" + '</a>',
-                         reply_markup=kursvalue)
+                         reply_markup=kursvalue)'''
 

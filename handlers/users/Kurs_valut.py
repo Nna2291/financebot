@@ -14,10 +14,10 @@ print(m)
 
 @dp.message_handler(text='💵')
 async def kursUSA(message: types.Message):
-    await message.answer('Подождите... Идет получение информации от <a href="https://finance.yahoo.com/">'
+    await message.answer('Wait... Receiving information from <a href="https://finance.yahoo.com/">'
                          + "Yahoo Finance" + '</a>')
-    await message.answer('Доллар США USD 🇺🇸\n'
-                         + 'Сегодня вы можете купить доллар за ' +
+    await message.answer('USD 🇺🇸\n'
+                         + 'Today you can buy a dollar for' +
                          str(round(yf.download('RUB=X', str(now.year) + '-' + str(now.month) +
                                                '-' + str(now.day))['Adj Close'][0]))
                          + '₽', reply_markup=perexodiusd)
@@ -25,10 +25,10 @@ async def kursUSA(message: types.Message):
 
 @dp.message_handler(text='💶')
 async def KursEuro(message: types.Message):
-    await message.answer('Подождите... Идет получение информации от <a href="https://finance.yahoo.com/">'
+    await message.answer('Wait... Receiving information from <a href="https://finance.yahoo.com/">'
                          + "Yahoo Finance" + '</a>')
-    await message.answer('Евро 🇪🇺\n' +
-                         'Сегодня вы можете купить евро за ' + str(
+    await message.answer('Euro 🇪🇺\n' +
+                         'Today you can buy euros for ' + str(
         round(yf.download('EURRUB=X', str(now.year) + '-' + str(now.month) +
                           '-' + str(now.day))['Adj Close'][0])) +
                          '₽', reply_markup=perexodieuro)
@@ -36,10 +36,10 @@ async def KursEuro(message: types.Message):
 
 @dp.message_handler(text='💷')
 async def KursEuro(message: types.Message):
-    await message.answer('Подождите... Идет получение информации от <a href="https://finance.yahoo.com/">'
+    await message.answer('Please wait ... Receiving information from <a href="https://finance.yahoo.com/">'
                          + "Yahoo Finance" + '</a>')
-    await message.answer('Фунт стерлингов Соединенного королевства 🇬🇧\n' +
-                         'Сегодня вы можете купить фунт за ' + str(
+    await message.answer('🇬🇧\n' +
+                         'Today you can buy pound for ' + str(
         round(yf.download('GBPRUB=X', str(now.year) + '-' + str(now.month) +
                           '-' + str(now.day))['Adj Close'][0])) +
                          '₽', reply_markup=perexodigbps)

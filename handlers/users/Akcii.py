@@ -16,16 +16,16 @@ if len(str(now.day)) == 1:
     nowd = '0' + str(now.day)
 
 
-@dp.message_handler(text='Узнать котировки акций', state=None)
+@dp.message_handler(text='Learn share prices', state=None)
 async def menuakcii(message: types.Message):
-    await message.answer('Для начала работы введитие тиккер акции, которая вас интересует.',
+    await message.answer('To get started, enter the ticker of the stock that interests you.',
                          reply_markup=ReplyKeyboardRemove())
     await Test.Q1.set()
 
 
 @dp.message_handler(text='Посмотреть цену другой акции', state=None)
 async def menuakqwqeqcii(message: types.Message):
-    await message.answer('Для начала работы введитие тиккер акции, которая вас интересует.',
+    await message.answer('To get started, enter the ticker of the stock that interests you.',
                          reply_markup=ReplyKeyboardRemove())
     await Test.Q1.set()
 
@@ -38,10 +38,10 @@ async def answer_q2(message: types.Message, state: FSMContext):
     answer1 = data.get("answer1")
     print(answer1)
     await message.answer(
-        'Подождите... Идет получение информации от <a href="https://finance.yahoo.com/">'
+        'Wait... Receiving information from <a href="https://finance.yahoo.com/">'
         + "Yahoo Finance" + '</a>')
     await message.answer(
-        f'Сегодня вы можете купить акцию компании {answer1.upper()} за ' + str(round(
+        f'Today you can buy a share of the company {answer1.upper()} for ' + str(round(
             yf.download(answer1.upper(), f'{now.year}-{now.month}-{now.day - 1}')['Adj Close'][
                 0])) + '$',
         reply_markup=AkciyaKey)

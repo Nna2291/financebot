@@ -11,13 +11,13 @@ z = str(now.day)
 m = x + '-' + y + '-' + z
 
 
-@dp.message_handler(text='Посмотреть сколько стоило евро год назад')
+@dp.message_handler(text='See how much the euro cost a year ago')
 async def KursEuroGodnazad(message: types.Message):
     await message.answer(
-        'Подождите... Идет получение информации от <a href="https://finance.yahoo.com/">'
+        'Please wait ... Receiving information from <a href="https://finance.yahoo.com/">'
         + "Yahoo Finance" + '</a>')
     await message.answer('Евро 🇪🇺\n' +
-                         'Год назад вы могли купить евро за ' + str(
+                         'A year ago, you could buy euros for ' + str(
         round(yf.download('EURRUB=X', str(now.year - 1) + '-' + str(now.month) +
                           '-' + str(now.day))['Adj Close'][0])) +
                          '₽', reply_markup=perexodieuro)

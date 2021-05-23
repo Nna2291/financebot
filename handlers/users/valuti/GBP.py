@@ -12,13 +12,13 @@ z = str(now.day - 1)
 m = x + '-' + y + '-' + z
 
 
-@dp.message_handler(text='Посмотреть сколько стоил фунт год назад')
+@dp.message_handler(text='See how much a pound cost a year ago')
 async def KursGBPGodnazad(message: types.Message):
     await message.answer(
-        'Подождите... Идет получение информации от <a href="https://finance.yahoo.com/">'
+        'Please wait ... Receiving information from <a href="https://finance.yahoo.com/">'
         + "Yahoo Finance" + '</a>')
-    await message.answer('Фунт стерлингов Соединенного королевства 🇬🇧\n'
-                         + 'Год назад вы могли купить доллар за ' +
+    await message.answer('British pound sterling 🇬🇧\n'
+                         + 'A year ago, you could have bought British pound sterling for' +
                          str(round(yf.download('GBPRUB=X', str(now.year - 1) + '-' + str(now.month) +
                                                '-' + str(now.day))['Adj Close'][0]))
                          + ' ₽', reply_markup=perexodigbps)

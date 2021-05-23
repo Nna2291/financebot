@@ -6,7 +6,7 @@ AkciyaKey = ReplyKeyboardMarkup(
             KeyboardButton(text='Посмотреть цену другой акции')
         ],
         [
-            KeyboardButton(text='Вернуться в меню')
+            KeyboardButton(text='Back to currency selection')
         ],
     ],
     resize_keyboard=True
